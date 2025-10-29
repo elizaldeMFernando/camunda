@@ -1,0 +1,87 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "453d943"
+  },
+  "schemaVersion": 19,
+  "id": "Form_1rnn19c",
+  "components": [
+    {
+      "label": "Nombre",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1wnf4i8",
+        "columns": null
+      },
+      "id": "Field_1r7ifn2",
+      "key": "nombre",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Fecha de Nacimiento",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0pu3qa0",
+        "columns": null
+      },
+      "id": "Field_172fk0f",
+      "key": "fechaNacimiento",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Teléfono",
+      "type": "number",
+      "layout": {
+        "row": "Row_0pu3qa0",
+        "columns": null
+      },
+      "id": "Field_084lsge",
+      "key": "telefono",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Correo Electrónico",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0qx6ehx",
+        "columns": null
+      },
+      "id": "Field_0o669m3",
+      "key": "correo",
+      "validate": {
+        "required": true,
+        "validationType": "email"
+      }
+    },
+    {
+      "label": "eres estudiante?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1cahw78",
+        "columns": null
+      },
+      "id": "Field_18fxyjb",
+      "key": "estudiante"
+    },
+    {
+      "label": "eres menor de edado?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1cahw78",
+        "columns": null
+      },
+      "id": "Field_1upklq4",
+      "key": "menor18"
+    }
+  ],
+  "type": "default"
+}

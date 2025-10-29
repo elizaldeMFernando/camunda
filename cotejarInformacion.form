@@ -1,0 +1,116 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "453d943"
+  },
+  "schemaVersion": 19,
+  "id": "Form_oa1ordo",
+  "components": [
+    {
+      "label": "Nombre",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1wnf4i8",
+        "columns": null
+      },
+      "id": "Field_1r7ifn2",
+      "key": "nombre",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Fecha de Nacimiento",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0pu3qa0",
+        "columns": null
+      },
+      "id": "Field_172fk0f",
+      "key": "fechaNacimiento",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Teléfono",
+      "type": "number",
+      "layout": {
+        "row": "Row_0pu3qa0",
+        "columns": null
+      },
+      "id": "Field_084lsge",
+      "key": "telefono",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Correo Electrónico",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0qx6ehx",
+        "columns": null
+      },
+      "id": "Field_0o669m3",
+      "key": "correo",
+      "validate": {
+        "required": true,
+        "validationType": "email"
+      },
+      "readonly": true
+    },
+    {
+      "label": "eres estudiante?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1cahw78",
+        "columns": null
+      },
+      "id": "Field_18fxyjb",
+      "key": "estudiante",
+      "readonly": true
+    },
+    {
+      "label": "eres menor de edad?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1cahw78",
+        "columns": null
+      },
+      "id": "Field_1upklq4",
+      "key": "menor18",
+      "readonly": true
+    },
+    {
+      "label": "Es VIP?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1gt9z81",
+        "columns": null
+      },
+      "id": "Field_061ofyh",
+      "key": "vip"
+    },
+    {
+      "label": "Engagement Score",
+      "type": "number",
+      "layout": {
+        "row": "Row_1dqj7li",
+        "columns": null
+      },
+      "id": "Field_1ty8xm0",
+      "key": "engagementScore",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default"
+}

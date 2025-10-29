@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1jx8amn" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Web Modeler" exporterVersion="453d943" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
+  <decision id="evaluar-upgrade-0oc5mnn" name="Evaluar upgrade">
+    <decisionTable id="DecisionTable_13cb9c2" hitPolicy="FIRST">
+      <input id="Input_1" label="Es VIP">
+        <inputExpression id="InputExpression_1" typeRef="boolean">
+          <text>vip</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1x4du4k" label="Engagement Score">
+        <inputExpression id="LiteralExpression_1byzrw9" typeRef="number">
+          <text>engagementScore</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0iwyl61" label="Es Estudiante">
+        <inputExpression id="LiteralExpression_13qk2kg" typeRef="boolean">
+          <text>estudiante</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1csgu0i" label="Es Menor de Edad?">
+        <inputExpression id="LiteralExpression_0wfin3p" typeRef="boolean">
+          <text>menor18</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="es acredor a Upgrade" typeRef="boolean" />
+      <rule id="DecisionRule_0bzscmg">
+        <inputEntry id="UnaryTests_1fw32f7">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ncnow8">
+          <text>&gt;=25</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ftx4qf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fjwga3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02wgdcw">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0m2j6lh">
+        <inputEntry id="UnaryTests_04eivdm">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ry5f2y">
+          <text>&lt;=40</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1stgbt6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c0f19o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1utbp7c">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1a00ooh">
+        <inputEntry id="UnaryTests_0db7cd4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d8xy5g">
+          <text>&gt;=20</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03k97x1">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xgua9v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i9dh0b">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i1q17y">
+        <inputEntry id="UnaryTests_1di67r7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14vgt7z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j4938z">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0df21h9">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1b054b9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jirr94">
+        <inputEntry id="UnaryTests_013jm2m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03wv4dq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1loi3c6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v9bcpy">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0584lma">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="evaluar-upgrade-0oc5mnn">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
