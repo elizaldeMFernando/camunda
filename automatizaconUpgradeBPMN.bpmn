@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="70f83fd" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
+  <bpmn:collaboration id="Collaboration_02bxwuz">
+    <bpmn:participant id="Participant_0pibpn4" name="Upgrade producto" processRef="Process_19yrsza" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_19yrsza" name="automatizaconUpgrade" isExecutable="true"><bpmn:extensionElements><zeebe:versionTag value="1.0"></zeebe:versionTag></bpmn:extensionElements>
+    <bpmn:laneSet id="LaneSet_03v6s6j">
+      <bpmn:lane id="Lane_016fwf6" name="Analista">
+        <bpmn:flowNodeRef>Activity_1b0s4sv</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_01abzkl</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_19xb9c1" name="Usuario">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_10ff7ww</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0dv5wdc</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0cn580d</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formId="Form_1rnn19c" />
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_1fuknyg</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_10ff7ww" name="Capturar Información">
+      <bpmn:incoming>Flow_1fuknyg</bpmn:incoming>
+      <bpmn:outgoing>Flow_180l9fl</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1fuknyg" sourceRef="StartEvent_1" targetRef="Activity_10ff7ww" />
+    <bpmn:sequenceFlow id="Flow_180l9fl" sourceRef="Activity_10ff7ww" targetRef="Activity_1b0s4sv" />
+    <bpmn:task id="Activity_1b0s4sv" name="Cotejar y complementar datos">
+      <bpmn:incoming>Flow_180l9fl</bpmn:incoming>
+      <bpmn:outgoing>Flow_1j2k68l</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_01abzkl" name="Evaluar upgrade">
+      <bpmn:incoming>Flow_1j2k68l</bpmn:incoming>
+      <bpmn:outgoing>Flow_1fqqi1e</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1j2k68l" sourceRef="Activity_1b0s4sv" targetRef="Activity_01abzkl" />
+    <bpmn:sequenceFlow id="Flow_1fqqi1e" sourceRef="Activity_01abzkl" targetRef="Activity_0dv5wdc" />
+    <bpmn:task id="Activity_0dv5wdc" name="Notificar al cliente">
+      <bpmn:incoming>Flow_1fqqi1e</bpmn:incoming>
+      <bpmn:outgoing>Flow_180n0cj</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_0cn580d">
+      <bpmn:incoming>Flow_180n0cj</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_180n0cj" sourceRef="Activity_0dv5wdc" targetRef="Event_0cn580d" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_02bxwuz">
+      <bpmndi:BPMNShape id="Participant_0pibpn4_di" bpmnElement="Participant_0pibpn4" isHorizontal="true">
+        <dc:Bounds x="100" y="-40" width="880" height="370" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_016fwf6_di" bpmnElement="Lane_016fwf6" isHorizontal="true">
+        <dc:Bounds x="130" y="80" width="850" height="250" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_19xb9c1_di" bpmnElement="Lane_19xb9c1" isHorizontal="true">
+        <dc:Bounds x="130" y="-40" width="850" height="120" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="202" y="-8" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_10ff7ww_di" bpmnElement="Activity_10ff7ww">
+        <dc:Bounds x="290" y="-30" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1b0s4sv_di" bpmnElement="Activity_1b0s4sv">
+        <dc:Bounds x="290" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01abzkl_di" bpmnElement="Activity_01abzkl">
+        <dc:Bounds x="440" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0dv5wdc_di" bpmnElement="Activity_0dv5wdc">
+        <dc:Bounds x="590" y="-30" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0cn580d_di" bpmnElement="Event_0cn580d">
+        <dc:Bounds x="742" y="-8" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1fuknyg_di" bpmnElement="Flow_1fuknyg">
+        <di:waypoint x="238" y="10" />
+        <di:waypoint x="290" y="10" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_180l9fl_di" bpmnElement="Flow_180l9fl">
+        <di:waypoint x="340" y="50" />
+        <di:waypoint x="340" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1j2k68l_di" bpmnElement="Flow_1j2k68l">
+        <di:waypoint x="390" y="200" />
+        <di:waypoint x="440" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1fqqi1e_di" bpmnElement="Flow_1fqqi1e">
+        <di:waypoint x="540" y="200" />
+        <di:waypoint x="565" y="200" />
+        <di:waypoint x="565" y="10" />
+        <di:waypoint x="590" y="10" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_180n0cj_di" bpmnElement="Flow_180n0cj">
+        <di:waypoint x="690" y="10" />
+        <di:waypoint x="742" y="10" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
